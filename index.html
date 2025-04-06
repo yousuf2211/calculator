@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>body{
+        background-color: #000000;
+    }
+    
+    
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        position: relative;
+        background-color: #1fb11a;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        width: 300px;
+        margin: 100px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        gap: 10px; /* Add spacing between elements */
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    @media (max-width: 600px) {
+        .container {
+            width: 90%; /* Make the container responsive on smaller screens */
+            padding: 10px; /* Adjust padding for smaller screens */
+        }
+    
+        h1 {
+            font-size: 18px; /* Reduce font size for smaller screens */
+        }
+    
+        input, button {
+            font-size: 14px; /* Adjust font size for inputs and buttons */
+        }
+    }</style>
+<div class="container">
+    <input id="input1" type="number" placeholder="সংখ্যা ১">
+    
+    
+    <select id="operator">
+      <option value="+">➕ যোগ</option>
+      <option value="-">➖ বিয়োগ</option>
+      <option value="*">✖️ গুণ</option>
+      <option value="/">➗ ভাগ</option>
+    </select>
+    <input id="input2" type="number" placeholder="সংখ্যা ২">
+    
+    <button>Calculate</button>
+    
+    <h1></h1>
+</div>
+<script 2>
+
+let a = document.querySelector("button");
+let b = document.querySelector("h1");
+let c = document.querySelector("#input1");
+let d = document.querySelector("#input2");
+let op = document.querySelector("#operator");
+
+
+a.addEventListener("click", function () {
+    let operator = op.value;
+    let number1 = Number(c.value);
+    let number2 = Number(d.value);
+
+    if (c.value=="" || d.value== "") {
+        b.innerText = "Please enter a number!";
+        b.style.color = "red";
+        return;
+     }
+    else if(operator== "+"){
+        b.innerText = number1 + number2;
+    }
+    else if(operator== "-"){
+        b.innerText = number1 - number2;
+    }
+    else if(operator== "*"){
+        b.innerText = number1 * number2;
+    }
+    else if(operator== "/"){
+        b.innerText = number1 / number2;
+        
+    }
+    
+});
+
+</script>
+</body>
+</html>
